@@ -71,7 +71,7 @@
             , <&key_physical_attrs 100 100  650  387    2000   550   387>
 
             , <&key_physical_attrs 100 100  750  387 (-2000)   650   387>
-            , <&key_physical_attrs 100 100  863  350 (-1000)     0   350>
+            , <&key_physical_attrs 100 100  863  350 (-1000)   763   350>
 
             , <&key_physical_attrs 100 100 1300  337       0     0     0>
             , <&key_physical_attrs 100 100 1400  337       0     0     0>
