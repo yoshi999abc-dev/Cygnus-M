@@ -8,7 +8,11 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
+#include <input/processors.dtsi>
 
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 5 250>;
+};
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
