@@ -8,6 +8,34 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+/* ファームウェア側で重いレイヤーを用意（記述例） */
+#include <dt-bindings/zmk/input_transform.h>
+
+/ {
+    // 激重にするプロファイル
+    sniper_tf: sniper_tf {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_TRANSFORM_X | INPUT_TRANSFORM_Y>;
+        scale = <1 4>; // カーソル移動量を1/4にしてめちゃくちゃ重くする
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer { // レイヤー0
+            // 通常のキーマップ
+        };
+
+        sniper_layer {  // レイヤー1（例）
+            bindings = <
+                // このレイヤーにいる間だけトラックボールを重くする
+                &trackball { input-processors = <&sniper_tf>; };
+            >;
+        };
+    };
+};
+
 
 &mkp_input_listener { input-processors = <&zip_temp_layer  4 250>; };
 
