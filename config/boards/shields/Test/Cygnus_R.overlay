@@ -17,8 +17,15 @@
         input-processors = <&zip_temp_layer 4 1000>;
 
         sniper {
-            layers = <7>;                            // SNIPER = レイヤー7
-            input-processors = <&zip_xy_scaler 1 6>; // ×1/6（さらに重く→ 1 8）
+            process-next;
+            layers = <7>;                            // SNIPER = レイヤー7（微速）
+            input-processors = <&zip_xy_scaler 1 6>; // ×1/6
+        };
+
+        mid {
+            process-next;
+            layers = <8>;                            // MID = レイヤー8（中速）
+            input-processors = <&zip_xy_scaler 1 3>; // ×1/3
         };
     };
 };
