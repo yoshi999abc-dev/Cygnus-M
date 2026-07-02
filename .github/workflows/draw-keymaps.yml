@@ -1,0 +1,19 @@
+name: Draw ZMK keymaps
+on:
+  workflow_dispatch:  # 手動実行も可能
+  push:               # 以下のパス変更で自動実行
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write  # 生成したSVGをリポジトリにコミットするため
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      commit_message: "[Draw] keymap render"
