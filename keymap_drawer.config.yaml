@@ -1,0 +1,15 @@
+parse_config:
+  # 自作マクロ・特殊バインディングの表示名
+  raw_binding_map:
+    "&save_all": "保存"
+    "&snip": "SS"
+    "&win_clip": "履歴"
+    "&ai_launch": "AI"
+    "&task_view": "TaskV"
+    "&mkp (LCLK|RCLK)": "L+R"
+    "&kp LANG_ZENKAKUHANKAKU": "全半"
+    "&kp LC(INT2)": "英数"
+
+draw_config:
+  # コンボ表示を見やすく
+  draw_key_sides: true
